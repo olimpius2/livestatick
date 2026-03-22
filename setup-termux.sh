@@ -32,11 +32,11 @@ pkg update -y && pkg upgrade -y
 # ── Step 2: Install required tools ───────────────────────────────────────────
 echo ""
 echo ">>> [2/6] Installing required packages..."
-# openjdk-17 : Java 17 compiler + runtime (required by AGP 8.1)
+# openjdk-21 : Java 21 compiler + runtime (AGP 8.1 supports Java 17+, 21 works great)
 # aapt2      : ARM64-native resource packager (replaces Gradle's x86-64 download)
 # wget       : download cmdline-tools zip
 # unzip, zip : extract SDK
-pkg install -y openjdk-17 aapt2 wget unzip zip
+pkg install -y openjdk-21 aapt2 wget unzip zip
 
 # ── Step 3: Download Android cmdline-tools ───────────────────────────────────
 echo ""
@@ -63,7 +63,7 @@ fi
 echo ""
 echo ">>> [4/6] Configuring environment variables..."
 export ANDROID_HOME="$ANDROID_SDK_DIR"
-export JAVA_HOME="/data/data/com.termux/files/usr/lib/jvm/java-17-openjdk"
+export JAVA_HOME="/data/data/com.termux/files/usr/lib/jvm/java-21-openjdk"
 export PATH="$PATH:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools"
 
 BASHRC="$HOME/.bashrc"
@@ -72,7 +72,7 @@ if ! grep -q "ANDROID_HOME" "$BASHRC" 2>/dev/null; then
 
 # Android SDK (added by setup-termux.sh)
 export ANDROID_HOME="$HOME/android-sdk"
-export JAVA_HOME="/data/data/com.termux/files/usr/lib/jvm/java-17-openjdk"
+export JAVA_HOME="/data/data/com.termux/files/usr/lib/jvm/java-21-openjdk"
 export PATH="$PATH:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools"
 ENVBLOCK
     echo "    Environment variables written to ~/.bashrc"
