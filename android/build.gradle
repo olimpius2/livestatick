@@ -1,5 +1,5 @@
 // Top-level build file.
 // Repository declarations are in settings.gradle (AGP 8.x style).
 plugins {
-    id 'com.android.application' version '8.1.0' apply false
+    id 'com.android.application' version '8.3.2' apply false
 }
