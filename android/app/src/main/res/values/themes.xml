@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        android:Theme.Material.Light.NoActionBar is built into the platform (API 21+).
+        Using it requires zero external dependencies — no AppCompat, no Material library.
+    -->
+    <style name="Theme.HelloWorld" parent="android:Theme.Material.Light.NoActionBar" />
+</resources>

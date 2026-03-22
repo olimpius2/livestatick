@@ -1,0 +1,32 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.example.helloworld'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.example.helloworld"
+        minSdk 21
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+        }
+    }
+}
+
+dependencies {
+    // No external dependencies — uses only android.app.Activity and android.widget.TextView
+    // from the platform SDK. Avoids any Maven downloads beyond the SDK itself.
+}
